@@ -1,1 +1,26 @@
-/*# sourceMappingURL=home.css.map */
+.home .features {
+  background-color: #f1fdf7;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+}
+.home .features .container {
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+.home .features .container .item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.home .features .container .item:first-child {
+  flex: 2;
+}
+.home .features .container .item:last-child {
+  flex: 3;
+}
+.home .features .container .item .img {
+  width: 620px;
+}/*# sourceMappingURL=home.css.map */

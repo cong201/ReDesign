@@ -4,16 +4,23 @@
   padding: 100px 0px;
 }
 .slide .container {
-  width: 1290px;
+  width: 1400px;
+  position: relative;
 }
-.slide .container .carousel-prev,
-.slide .container .carousel-next {
+.slide .carousel-initialized {
+  position: static;
+}
+.slide .carousel-prev,
+.slide .carousel-next {
   width: 50px;
   height: 50px;
-  background-color: lightgray;
+  background-color: rgb(243, 243, 243);
   border-radius: 50%;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
+}
+.slide .carousel-prev {
+  left: -25px;
 }/*# sourceMappingURL=slide.css.map */

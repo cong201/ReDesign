@@ -1,1 +1,90 @@
-/*# sourceMappingURL=users.css.map */
+.users {
+  display: flex;
+  justify-content: center;
+}
+.users .container {
+  width: 1400px;
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.users .container .breadcrumbs {
+  font-weight: 300;
+  font-size: 13px;
+  color: #555;
+}
+.users .container p {
+  color: #000;
+  font-weight: 300;
+}
+.users .container .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.users .container .menu .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+  font-weight: 300;
+}
+.users .container .menu .left input {
+  padding: 5px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+.users .container .menu .left input::-moz-placeholder {
+  color: lightgray;
+}
+.users .container .menu .left input::placeholder {
+  color: lightgray;
+}
+.users .container .menu .left button {
+  background-color: #1dbf73;
+  color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.users .container .menu .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.users .container .menu .right .sortBy {
+  color: #555;
+  font-weight: 300;
+}
+.users .container .menu .right .sortType {
+  font-weight: 500;
+}
+.users .container .menu .right img {
+  width: 15px;
+  cursor: pointer;
+}
+.users .container .menu .right .rightMenu {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 0.5px solid lightgray;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #555;
+}
+.users .container .menu .right .rightMenu span {
+  cursor: pointer;
+}
+.users .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}/*# sourceMappingURL=users.css.map */

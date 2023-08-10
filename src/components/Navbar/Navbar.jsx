@@ -75,6 +75,7 @@ const Navbar = () => {
                         <Link className="link" to={'/'}>Business</Link>
                         <Link className="link" to={'/'}>LifeStyle</Link>
                     </div>
+                    <hr />
                 </>
             )}
         </div>

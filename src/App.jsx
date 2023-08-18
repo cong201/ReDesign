@@ -14,6 +14,7 @@ import MyUser from "./pages/myUser/MyUser";
 import Order from "./pages/order/Order";
 import Add from "./pages/add/Add";
 import Message from "./pages/message/Message";
+import Login from "./pages/login/Login";
 
 function App() {
 
@@ -59,6 +60,10 @@ function App() {
         {
           path: '/add',
           element: <Add />
+        },
+        {
+          path: '/login',
+          element: <Login />
         }
       ]
     },

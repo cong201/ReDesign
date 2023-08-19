@@ -1,11 +1,49 @@
 import React, { useState } from "react"
 import "./register.scss"
+import newRequest from "../../utils/newRequest.js"
+import { useNavigate } from "react-router-dom"
 
 function Register() {
+    const [file, setFile] = useState(null)
+    const [user, setUser] = useState({
+        username: "",
+        email: "",
+        password: "",
+        img: "",
+        country: "",
+        isSeller: false,
+        desc: ""
+    })
+
+    const navigate = useNavigate()
+
+
+    const handleChange = (e) => {
+        setUser((prev) => {
+            return { ...prev, [e.target.name]: e.target.value }
+        })
+    }
+    const handleSeller = (e) => {
+        setUser((prev) => {
+            return { ...prev, isSeller: e.target.checked }
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            await newRequest.post("/auth/register", {
+                ...user
+            })
+            // navigate("/")
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <div className="register">
-            <form >
+            <form onClick={handleSubmit}>
                 <div className="left">
                     <h1>Create a new account</h1>
                     <label htmlFor="">Username</label>
@@ -13,22 +51,29 @@ function Register() {
                         name="username"
                         type="text"
                         placeholder="user"
+                        onChange={handleChange}
                     />
                     <label htmlFor="">Email</label>
                     <input
                         name="email"
                         type="email"
                         placeholder="email"
+                        onChange={handleChange}
                     />
                     <label htmlFor="">Password</label>
-                    <input name="password" type="password" />
+                    <input
+                        name="password"
+                        type="password"
+                        onChange={handleChange}
+                    />
                     <label htmlFor="">Profile Picture</label>
-                    <input type="file" />
+                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
                     <label htmlFor="">Country</label>
                     <input
                         name="country"
                         type="text"
                         placeholder="Viet Nam"
+                        onChange={handleChange}
                     />
                     <button type="submit">Register</button>
                 </div>
@@ -37,7 +82,7 @@ function Register() {
                     <div className="toggle">
                         <label htmlFor="">Activate the seller account</label>
                         <label className="switch">
-                            <input type="checkbox" />
+                            <input type="checkbox" onChange={handleSeller} />
                             <span className="slider round"></span>
                         </label>
                     </div>
@@ -46,6 +91,7 @@ function Register() {
                         name="phone"
                         type="text"
                         placeholder="+84 1234 56789"
+                        onChange={handleChange}
                     />
                     <label htmlFor="">Description</label>
                     <textarea
@@ -54,6 +100,7 @@ function Register() {
                         id=""
                         cols="30"
                         rows="10"
+                        onChange={handleChange}
                     ></textarea>
                 </div>
             </form>
